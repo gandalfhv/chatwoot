@@ -1,5 +1,6 @@
 <script setup>
 import { computed } from 'vue';
+import { useGetters } from 'dashboard/composables/vuex';
 import { useUISettings } from 'dashboard/composables/useUISettings';
 import { formatNumber } from '@chatwoot/utils';
 import wootConstants from 'dashboard/constants/globals';
@@ -27,7 +28,8 @@ const emit = defineEmits([
 ]);
 
 const { uiSettings, updateUISettings } = useUISettings();
-
+const getters = useGetters();
+const isAdmin = computed(() => getters.getCurrentRole.value === 'administrator');
 const onBasicFilterChange = (value, type) => {
   emit('basicFilterChange', value, type);
 };
@@ -138,7 +140,7 @@ const toggleConversationLayout = () => {
           @click="emit('deleteFolders')"
         />
       </template>
-      <div v-else class="relative">
+      <div v-if="isAdmin" class="relative">
         <NextButton
           id="toggleConversationFilterButton"
           v-tooltip.right="$t('FILTER.TOOLTIP_LABEL')"
@@ -166,3 +168,4 @@ const toggleConversationLayout = () => {
     </div>
   </div>
 </template>
+

@@ -1,5 +1,9 @@
 class GlobalConfigService
   def self.load(config_key, default_value)
+    if config_key == 'INSTALLATION_NAME'
+      # personalización logica para INSTALLATION_NAME: ENV > Hardcoded value
+      return ENV.fetch('INSTALLATION_NAME', 'Multiagente MibOT')
+    end
     config = GlobalConfig.get(config_key)[config_key]
     return config if config.present?
 
