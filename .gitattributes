@@ -1,0 +1,7 @@
+# Establece el comportamiento por defecto para todos los archivos de texto.
+# Git los tratará internamente siempre con finales de línea de Linux (LF).
+* text=auto
+
+# Para los scripts de shell, fuerza explícitamente que SIEMPRE usen
+# finales de línea de Linux (LF), ya que son los más sensibles.
+*.sh eol=lf

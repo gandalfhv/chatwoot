@@ -1,6 +1,6 @@
 <script setup>
 import { computed } from 'vue';
-import { useGetters } from 'dashboard/composables/vuex';
+import { useAdmin } from 'dashboard/composables/useAdmin';
 import { useUISettings } from 'dashboard/composables/useUISettings';
 import { formatNumber } from '@chatwoot/utils';
 import wootConstants from 'dashboard/constants/globals';
@@ -28,8 +28,8 @@ const emit = defineEmits([
 ]);
 
 const { uiSettings, updateUISettings } = useUISettings();
-const getters = useGetters();
-const isAdmin = computed(() => getters.getCurrentRole.value === 'administrator');
+
+const isAdmin =  useAdmin(); //Implementar aqui una forma de identificar el rol de administrador
 const onBasicFilterChange = (value, type) => {
   emit('basicFilterChange', value, type);
 };
