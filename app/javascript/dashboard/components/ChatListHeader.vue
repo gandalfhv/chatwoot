@@ -29,7 +29,7 @@ const emit = defineEmits([
 
 const { uiSettings, updateUISettings } = useUISettings();
 
-const isAdmin =  useAdmin(); //Implementar aqui una forma de identificar el rol de administrador
+const { isAdmin } = useAdmin(); //Implementar aqui una forma de identificar el rol de administrador
 const onBasicFilterChange = (value, type) => {
   emit('basicFilterChange', value, type);
 };
