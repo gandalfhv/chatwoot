@@ -1,6 +1,6 @@
 {
   "LOGIN": {
-    "TITLE": "Login to MultiAgente MibOT",
+    "TITLE": "Login",
     "EMAIL": {
       "LABEL": "Email",
       "PLACEHOLDER": "example{'@'}companyname.com",

@@ -163,7 +163,7 @@
       "MESSAGE_SIGN_TOOLTIP": "Firma del mensaje",
       "ENABLE_SIGN_TOOLTIP": "Activar firma",
       "DISABLE_SIGN_TOOLTIP": "Desactivar firma",
-      "MSG_INPUT": "Shift + enter for new line. Comience con '/' para seleccionar una respuesta predefinida.",
+      "MSG_INPUT": "Shift + enter para una nueva línea. Comience con '/' para seleccionar una respuesta predefinida.",
       "PRIVATE_MSG_INPUT": "Mayús + entrar para una nueva línea. Esto será visible sólo para los agentes",
       "MESSAGE_SIGNATURE_NOT_CONFIGURED": "La firma del mensaje no está configurada, por favor configúrela en la configuración del perfil.",
       "CLICK_HERE": "Haga clic aquí para actualizar",
@@ -269,11 +269,11 @@
     }
   },
   "ONBOARDING": {
-    "TITLE": "Hola 👋, ¡Bienvenido a {installationName}!",
-    "DESCRIPTION": "Gracias por registrarse. Queremos que saque el máximo provecho de {installationName}. Aquí hay algunas cosas que puede hacer en {installationName} para hacer que la experiencia sea agradable.",
-    "GREETING_MORNING": "👋 Buenos días, {name}. Bienvenido a  {installationName}.",
-    "GREETING_AFTERNOON": "👋 Buenas tardes, {name}. Bienvenido a  {installationName}.",
-    "GREETING_EVENING": "👋 Buenas noches, {name}. Bienvenido a  {installationName}.",
+    "TITLE": "Hola 👋, ¡Bienvenido a MultiAgente MibOT!",
+    "DESCRIPTION": "Gracias por registrarse. Queremos que saque el máximo provecho de MultiAgente MibOT. Aquí hay algunas cosas que puede hacer en MultiAgente MibOT para hacer que la experiencia sea agradable.",
+    "GREETING_MORNING": "👋 Buenos días, {name}. Bienvenido a  MultiAgente MibOT.",
+    "GREETING_AFTERNOON": "👋 Buenas tardes, {name}. Bienvenido a  MultiAgente MibOT.",
+    "GREETING_EVENING": "👋 Buenas noches, {name}. Bienvenido a  MultiAgente MibOT.",
     "READ_LATEST_UPDATES": "Leer nuestras últimas actualizaciones",
     "ALL_CONVERSATION": {
       "TITLE": "Todas sus conversaciones en un solo lugar",

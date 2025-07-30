@@ -8,15 +8,15 @@
 - name: LOGO_DARK
   value: '/brand-assets/logo_dark.svg'
 - name: BRAND_URL
-  value: 'https://www.chatwoot.com'
+  value: 'https://prograpps.com/multiagente'
 - name: WIDGET_BRAND_URL
-  value: 'https://www.chatwoot.com'
+  value: 'https://prograpps.com'
 - name: BRAND_NAME
-  value: 'Chatwoot'
+  value: 'MultiAgente MibOT'
 - name: TERMS_URL
-  value: 'https://www.chatwoot.com/terms-of-service'
+  value: 'https://prograpps.com/terminos-servicio'
 - name: PRIVACY_URL
-  value: 'https://www.chatwoot.com/privacy-policy'
+  value: 'https://prograpps.com/politica-privacidad'
 - name: DISPLAY_MANIFEST
   value: true
 # ------- End of Branding Related Config ------- #

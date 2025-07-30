@@ -1,9 +1,21 @@
 class GlobalConfigService
   def self.load(config_key, default_value)
-    if config_key == 'INSTALLATION_NAME'
-      # personalización logica para INSTALLATION_NAME: ENV > Hardcoded value
-      return ENV.fetch('INSTALLATION_NAME', 'Multiagente MibOT')
-    end
+   # --- INICIO DE LA PERSONALIZACIÓN ---
+    # Interceptamos las claves de configuración específicas y devolvemos nuestros valores.
+    # Esto anula cualquier valor de la base de datos o de los archivos .yml.
+    # case config_key
+    # when 'BRAND_NAME'
+    #   return 'MultiAgente MibOT'
+    # when 'BRAND_URL'
+    #   return 'https://prograpps.com/multiagente'
+    # when 'WIDGET_BRAND_URL'
+    #   return 'https://prograpps.com'
+    # when 'TERMS_URL'
+    #   return 'https://prograpps.com/terminos-servicio'
+    # when 'PRIVACY_URL'
+    #   return 'https://prograpps.com/politica-privacidad'
+    # end
+    # --- FIN DE LA PERSONALIZACIÓN ---
     config = GlobalConfig.get(config_key)[config_key]
     return config if config.present?
 
