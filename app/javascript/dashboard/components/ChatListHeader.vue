@@ -100,7 +100,7 @@ const toggleConversationLayout = () => {
           />
           <div
             id="saveFilterTeleportTarget"
-            class="absolute z-40 mt-2"
+            class="absolute z-50 mt-2"
             :class="{ 'ltr:right-0 rtl:left-0': isOnExpandedLayout }"
           />
         </div>
@@ -126,7 +126,7 @@ const toggleConversationLayout = () => {
           />
           <div
             id="conversationFilterTeleportTarget"
-            class="absolute z-40 mt-2"
+            class="absolute z-50 mt-2"
             :class="{ 'ltr:right-0 rtl:left-0': isOnExpandedLayout }"
           />
         </div>
@@ -152,7 +152,7 @@ const toggleConversationLayout = () => {
         />
         <div
           id="conversationFilterTeleportTarget"
-          class="absolute z-40 mt-2"
+          class="absolute z-50 mt-2"
           :class="{ 'ltr:right-0 rtl:left-0': isOnExpandedLayout }"
         />
       </div>

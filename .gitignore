@@ -96,3 +96,8 @@ yarn-debug.log*
 .cursor
 
 GEMINI.md
+CLAUDE.local.md
+
+# Histoire deployment
+.netlify
+.histoire

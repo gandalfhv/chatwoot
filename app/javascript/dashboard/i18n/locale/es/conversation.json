@@ -35,6 +35,11 @@
     "API_HOURS_WINDOW": "Solo puedes responder a esta conversación dentro de {hours} horas",
     "NOT_ASSIGNED_TO_YOU": "Esta conversación no te está asignada. ¿Quieres asignarla a ti mismo?",
     "ASSIGN_TO_ME": "Asignar a mi",
+    "BOT_HANDOFF_MESSAGE": "Estás respondiendo a una conversación que actualmente está siendo gestionada por un asistente o un chatbot.",
+    "BOT_HANDOFF_ACTION": "Marcar abierta y asignar a ti",
+    "BOT_HANDOFF_REOPEN_ACTION": "Marcar conversación como abierta",
+    "BOT_HANDOFF_SUCCESS": "La conversación ha sido transferida a usted.",
+    "BOT_HANDOFF_ERROR": "No se pudo retomar la conversación. Por favor, inténtelo de nuevo.",
     "TWILIO_WHATSAPP_CAN_REPLY": "Sólo puede responder a esta conversación usando una plantilla de mensaje debido a",
     "TWILIO_WHATSAPP_24_HOURS_WINDOW": "Restricción de la ventana de mensajes de 24 horas",
     "OLD_INSTAGRAM_INBOX_REPLY_BANNER": "Esta cuenta de Instagram fue migrada a la nueva bandeja de entrada del canal Instagram. Todos los nuevos mensajes aparecerán allí. Ya no podrás enviar mensajes de esta conversación.",
@@ -65,6 +70,17 @@
     "CARD": {
       "SHOW_LABELS": "Mostrar etiquetas",
       "HIDE_LABELS": "Ocultar etiquetas"
+    },
+    "VOICE_CALL": {
+      "INCOMING_CALL": "Incoming call",
+      "OUTGOING_CALL": "Outgoing call",
+      "CALL_IN_PROGRESS": "Call in progress",
+      "NO_ANSWER": "No answer",
+      "MISSED_CALL": "Missed call",
+      "CALL_ENDED": "Call ended",
+      "NOT_ANSWERED_YET": "Not answered yet",
+      "THEY_ANSWERED": "They answered",
+      "YOU_ANSWERED": "You answered"
     },
     "HEADER": {
       "RESOLVE_ACTION": "Resolver",
@@ -144,6 +160,9 @@
       "AGENTS_LOADING": "Cargando agentes...",
       "ASSIGN_TEAM": "Asignar equipo",
       "DELETE": "Eliminar conversación",
+      "OPEN_IN_NEW_TAB": "Abrir en nueva pestaña",
+      "COPY_LINK": "Copiar enlace de conversación",
+      "COPY_LINK_SUCCESS": "Enlace de conversación copiado en portapapeles",
       "API": {
         "AGENT_ASSIGNMENT": {
           "SUCCESFUL": "ID de conversación {conversationId} asignado a \"{agentName}\"",

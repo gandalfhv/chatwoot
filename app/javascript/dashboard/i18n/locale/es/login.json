@@ -22,6 +22,20 @@
     },
     "FORGOT_PASSWORD": "¿Olvidaste tu contraseña?",
     "CREATE_NEW_ACCOUNT": "Crear nueva cuenta",
-    "SUBMIT": "Iniciar sesión"
+    "SUBMIT": "Iniciar sesión",
+    "SAML": {
+      "LABEL": "Login via SSO",
+      "TITLE": "Iniciar Single Sign-on (SSO)",
+      "SUBTITLE": "Ingresa tu email de negocio para acceder a tu organización",
+      "BACK_TO_LOGIN": "Login via Password",
+      "WORK_EMAIL": {
+        "LABEL": "Email Empresarial",
+        "PLACEHOLDER": "Ingresa tu email empresarial"
+      },
+      "SUBMIT": "Continuar con SSO",
+      "API": {
+        "ERROR_MESSAGE": "Falló la SSO authentication. Por favor verifica tus credenciales e inténtalo nuevamente."
+      }
+    }
   }
 }
