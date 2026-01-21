@@ -58,3 +58,25 @@ En tu Servidor VPS:Actualizar Configuración: Edita el archivo docker-compose.ym
 Redesplegar: Ejecuta docker-compose down && docker-compose up -d
 
 Actualizar Base de Datos: Ejecuta el comando docker exec ... rails r ... para aplicar la configuración de la Parte 2.Este plan es sólido, completo y sigue las mejores prácticas. Has hecho un trabajo de análisis excepcional para llegar a esta solución final.
+
+
+
+
+
+Escenario:Estás en una nueva PC con Windows. Quieres instalar tu versión personalizada de Chatwoot en un servidor nuevo con Ubuntu.Fase 1: Preparar tu Nueva PC con Windows
+En tu nueva computadora, solo necesitas instalar tres herramientas. No necesitas instalar Ruby ni Vue.js.
+Git for Windows: Es el sistema de control de versiones. Te permite descargar el código desde GitHub.Descarga: https://git-scm.com/
+Instalación: Durante la instalación, acepta las opciones por defecto. Asegúrate de que instale "Git Bash".Docker Desktop: Es la herramienta que construye y gestiona los contenedores de tu aplicación.Descarga: https://www.docker.com/products/docker-desktop/Instalación: Sigue las instrucciones. Probablemente te pedirá reiniciar la PC. Después de reiniciar, asegúrate de que el icono de la ballena de Docker aparezca en tu barra de tareas.Visual Studio Code (Opcional, pero recomendado): El mejor editor para ver y modificar el código.Descarga: https://code.visualstudio.com/Fase 2: Descargar tu Código Personalizado desde GitHubAhora vamos a traer el código de tu versión personalizada desde tu repositorio en GitHub a tu PC.Abre "Git Bash" desde el menú de inicio.Navega a una carpeta donde quieras guardar tus proyectos.# Ejemplo: crear una carpeta 'proyectos' en tu usuario
+mkdir -p C:/Datos/Proyectos
+cd C:/Datos/Proyectos
+Clona tu repositorio: Este comando descarga tu proyecto. git clone https://github.com/gandalfhv/chatwoot.git
+Entra en la carpeta del proyecto:cd Chatwoot
+Cámbiate a tu rama de personalización: Este es el paso más importante. Le dice a Git que quieres trabajar con la versión que tiene todos tus cambios.git checkout feature/ocultar-filtro-agentes
+Fase 3: Construir la Imagen de Docker (El Paquete)Ahora vamos a empaquetar tu código en una "imagen" lista para ser usada.Asegúrate de que Docker Desktop esté en ejecución.Desde la terminal Git Bash, dentro de la carpeta chatwoot, ejecuta este comando. Reemplaza edwherrera160 por tu usuario de Docker Hub.docker build -t edwherrera160/multiagente-mibot:2.0 -f docker/Dockerfile .
+(Nota: He usado la versión 2.0. Puedes cambiarla si quieres).Este proceso tardará varios minutos.Fase 4: Subir la Imagen a Docker Hub (La Distribución)Vamos a subir tu paquete a la nube para que tu servidor pueda descargarlo.Inicia sesión en Docker Hub:docker login -u edwherrera160
+Te pedirá tu contraseña.Sube la imagen:docker push edwherrera160/multiagente-mibot:2.0
+Fase 5: Desplegar en el ServidorAhora, conéctate a tu servidor VPS con Ubuntu y pon todo en marcha.Conéctate por SSH a tu servidor.Ve a la carpeta de Chatwoot (normalmente /opt/chatwoot).Edita el archivo docker-compose.yml con nano docker-compose.yml.Busca la línea image: del servicio chatwoot o app y modifícala para que apunte a tu nueva imagen:image: edwherrera160/multiagente-mibot:2.0
+Guarda y cierra el archivo (Ctrl+X, Y, Enter).Levanta los servicios:docker-compose down && docker-compose up -d
+Fase 6: Configuración Final de la Marca (La "Llave Maestra")Este es un paso que solo necesitas hacer una vez en una instalación nueva para configurar la marca en la base de datos.Ejecuta este único comando en tu servidor:docker exec chatwoot_rails_1 bundle exec rails r "InstallationConfig.find_by(name: 'BRAND_NAME').update(value: 'Multiagente MibOT'); InstallationConfig.find_by(name: 'BRAND_URL').update(value: 'https://www.prograpps.com'); InstallationConfig.find_by(name: 'WIDGET_BRAND_URL').update(value: 'https://www.prograpps.com'); InstallationConfig.find_by(name: 'TERMS_URL').update(value: 'https://www.prograpps.com/terms'); InstallationConfig.find_by(name: 'PRIVACY_URL').update(value: 'https://www.prograpps.com/privacy')"
+Para que los cambios se apliquen, haz un último reinicio:docker-compose restart
+¡Listo! Ahora tu versión personalizada de Chatwoot debería estar funcionando perfectamente en tu servidor.

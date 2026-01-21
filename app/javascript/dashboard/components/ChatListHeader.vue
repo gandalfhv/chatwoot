@@ -140,7 +140,8 @@ const toggleConversationLayout = () => {
           @click="emit('deleteFolders')"
         />
       </template>
-      <div v-if="isAdmin" class="relative">
+      <!-- <div v-if="isAdmin" class="relative"> A partir de la actualizacion a 4.10.1 desactivo la verificacion de si es administrador-->
+      <div class="relative">  
         <NextButton
           id="toggleConversationFilterButton"
           v-tooltip.right="$t('FILTER.TOOLTIP_LABEL')"
