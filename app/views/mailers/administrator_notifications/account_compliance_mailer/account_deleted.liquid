@@ -1,30 +1,30 @@
-<p>Hello,</p>
+<p>Hola,</p>
 
-<p>This is a notification to inform you that an account has been permanently deleted from your Chatwoot instance.</p>
+<p>Esta es una notificación para informarle que una cuenta ha sido eliminada permanentemente de su instancia de MibOT Multiagente.</p>
 
 <p>
-  <strong>Chatwoot Installation:</strong> {{ meta.instance_url }}<br>
-  <strong>Account ID:</strong> {{ meta.account_id }}<br>
-  <strong>Account Name:</strong> {{ meta.account_name }}<br>
-  <strong>Deletion due at:</strong> {{ meta.marked_for_deletion_at }}<br>
-  <strong>Deleted At:</strong> {{ meta.deleted_at }}<br>
-  <strong>Deletion Reason:</strong> {{ meta.deletion_reason }}
+  <strong>Instalación de MibOT Multiagente:</strong> {{ meta.instance_url }}<br>
+  <strong>ID de la cuenta:</strong> {{ meta.account_id }}<br>
+  <strong>Nombre de la cuenta:</strong> {{ meta.account_name }}<br>
+  <strong>Eliminación debida el:</strong> {{ meta.marked_for_deletion_at }}<br>
+  <strong>Eliminado el:</strong> {{ meta.deleted_at }}<br>
+  <strong>Motivo de la eliminación:</strong> {{ meta.deletion_reason }}
 </p>
 
 {% if meta.deleted_user_count > 0 %}
 <p>
-  <strong>Deleted Users ({{ meta.deleted_user_count }}):</strong><br>
+  <strong>Usuarios eliminados ({{ meta.deleted_user_count }}):</strong><br>
   {% for user in meta.soft_deleted_users %}
-    User ID: {{ user.user_id }}, Email: {{ user.user_email }}{% unless forloop.last %}<br>{% endunless %}
+    ID de usuario: {{ user.user_id }}, Correo electrónico: {{ user.user_email }}{% unless forloop.last %}<br>{% endunless %}
   {% endfor %}
 </p>
 {% else %}
 <p>
-  <strong>Deleted Users:</strong> None
+  <strong>Usuarios eliminados:</strong> Ninguno
 </p>
 {% endif %}
 
-<p>This email serves as a record for compliance purposes.</p>
+<p>Este correo electrónico sirve como registro para fines de cumplimiento.</p>
 
-<p>Thank you,<br>
-Chatwoot System</p>
+<p>Gracias,<br>
+Sistema MibOT Multiagente</p>
