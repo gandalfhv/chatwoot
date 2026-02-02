@@ -80,3 +80,35 @@ Guarda y cierra el archivo (Ctrl+X, Y, Enter).Levanta los servicios:docker-compo
 Fase 6: Configuración Final de la Marca (La "Llave Maestra")Este es un paso que solo necesitas hacer una vez en una instalación nueva para configurar la marca en la base de datos.Ejecuta este único comando en tu servidor:docker exec chatwoot_rails_1 bundle exec rails r "InstallationConfig.find_by(name: 'BRAND_NAME').update(value: 'Multiagente MibOT'); InstallationConfig.find_by(name: 'BRAND_URL').update(value: 'https://www.prograpps.com'); InstallationConfig.find_by(name: 'WIDGET_BRAND_URL').update(value: 'https://www.prograpps.com'); InstallationConfig.find_by(name: 'TERMS_URL').update(value: 'https://www.prograpps.com/terms'); InstallationConfig.find_by(name: 'PRIVACY_URL').update(value: 'https://www.prograpps.com/privacy')"
 Para que los cambios se apliquen, haz un último reinicio:docker-compose restart
 ¡Listo! Ahora tu versión personalizada de Chatwoot debería estar funcionando perfectamente en tu servidor.
+
+
+
+
+# Procedimiento de Actualización de Branding y Traducciones (Chatwoot v4.10.1)
+
+### 1. Fase de Desarrollo (PC Local / VS Code)
+
+**B. Empaquetado y Subida:**
+Ejecutar en terminal de Visual Studio Code:
+
+  o powershell
+# 1. Guardar cambios
+git add .
+git commit -m "Update: Ajustes de marca y traducciones"
+
+# 2. Compilar Imagen (Sobrescribiendo la v4.10.1)
+docker build -t edwherrera160/multiagente-mibot:4.10.1 -f docker/Dockerfile .
+
+# 3. Subir a Docker Hub
+docker push edwherrera160/multiagente-mibot:4.10.1
+
+
+### Fase de Despliegue (Servidor VPS / Producción)
+# 1. Descargar la actualización (Solo baja las capas nuevas)
+docker compose pull
+
+# 2. Aplicar cambios (Reinicio quirúrgico: Solo recrea lo que cambió)
+docker compose up -d
+
+# 3. Limpieza (Eliminar la imagen vieja que quedó huérfana)
+docker image prune -f
